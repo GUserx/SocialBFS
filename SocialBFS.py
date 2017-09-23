@@ -40,9 +40,6 @@ def breadth_search(friends):
         #breadth_search(deque(some_set))
         print(result)
 
-
-
-
 def get_friends_from_id(friend_id):
     print(friend_id)
     response = requests.get('https://api.vk.com/method/friends.get?user_id={0}&fields=city'.format(friend_id))
@@ -55,8 +52,6 @@ def get_friends_from_id(friend_id):
         pass
     else:
         return [user['user_id'] for user in users_response if user not in already_checked_users_ids]
-
-
 
 user_input_source_id = input('Enter source user id: ')
 user_input_destination_id = input('Enter destination user id: ')
